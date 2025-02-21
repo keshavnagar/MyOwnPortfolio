@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="mySelect" onchange="showMessage()">
+      <option value="">--Select--</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="mango">Mango</option>
+    </select>
+    <p id="result"></p>
+
+   
+
+   
+
+    <script>
+         
+      const showMessage = () => {
+        let result = document.getElementById("result");
+        let selectBox = document.getElementById("mySelect");
+        let selectedValue = selectBox.value;
+        result.innerText = selectedValue;
+      };
+    </script>
+  </body>
+</html>

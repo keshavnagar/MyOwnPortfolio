@@ -1,59 +1,45 @@
 import "./App.css";
-import React , {useState} from "react";
-
+import React, { useState } from "react";
 
 function App() {
+  // making state of our application
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
 
-  // making state of our application 
-  const [weight , setWeight ] = useState(0);
-  const [height , setHeight] = useState(0);
+  const [bmi, setBmi] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [bmi , setBmi] = useState('');
-  const [message , setMessage] = useState('');
-
-  // logic : 
+  // logic :
 
   let calcBmi = (e) => {
-
     e.preventDefault();
 
     let weightNum = parseFloat(weight);
     let heightNum = parseFloat(height);
 
-    if(weightNum === 0 || heightNum === 0)
-      alert('enter valid weight or height')
-    else 
-    {
-      let bmi = (weight/(height*height)*703)
-      setBmi(bmi.toFixed(1))
+    if (weightNum === 0 || heightNum === 0)
+      alert("enter valid weight or height");
+    else {
+      let bmi = (weight / (height * height)) * 703;
+      setBmi(bmi.toFixed(1));
 
       //
 
-      if(bmi < 25 )
-      {
-        setMessage('you are underweight')
-      }
-
-      else if(bmi >= 25 && bmi < 30)
-      {
-        setMessage('you have healthy weight ')
-      }
-
-      else 
-      {
-        setMessage('you are overweight')
+      if (bmi < 25) {
+        setMessage("you are underweight");
+      } else if (bmi >= 25 && bmi < 30) {
+        setMessage("you have healthy weight ");
+      } else {
+        setMessage("you are overweight");
       }
     }
-  }
+  };
 
-  
-    // reload logicc 
+  // reload logicc
 
-    let reload = () => {
-      window.location.reload()
-    }
-
-
+  let reload = () => {
+    window.location.reload();
+  };
 
   return (
     <div className="App">
@@ -61,7 +47,11 @@ function App() {
         <h2>BMI Calc</h2>
         <form action="" onSubmit={calcBmi}>
           <div>
-            <label htmlFor="">Weight (ibs)</label>
+            <label htmlFor="">Weight</label>
+            <select id="weight-unit">
+              <option value="kg">Kg</option>
+              <option value="pound">Pound</option>
+            </select>
             <input
               type="text"
               placeholder="Enter weight value"
@@ -70,7 +60,12 @@ function App() {
             />
           </div>
           <div>
-            <label htmlFor="">Height (in)</label>
+            <label htmlFor="">Height</label>
+            <select id="weight-unit">
+            <option value="cm">CM</option>
+            <option value="inch">Inch</option>
+            <option value="feet">Feet</option>
+            </select>
             <input
               type="text"
               placeholder="Enter height value"
@@ -85,8 +80,6 @@ function App() {
             <button className="btn btn-outline" onClick={reload} type="submit">
               Reload
             </button>
-    
-
           </div>
           <div className="center">
             <h3>Your BMI is : {bmi}</h3>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Name</title>
+    <style>
+      body {
+        background-color: #f8f2de;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      .center {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center; /* This will center it vertically */
+        height: 100vh; /* 100% of the viewport height */
+      }
+
+     
+
+      .item-1 {
+        background-color: #a31d1d;
+      }
+
+      .item-11 {
+        color: #f8f2de;
+      }
+
+      .item-2 {
+        all: unset;
+        background-color: #a31d1d;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .item {
+        text-align: center;
+        color: #ecdcbf;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="item item-1">
+        Hello <span class="item-11" id="name">Name</span>
+      </h1>
+      <button class="item item-2" id="button" onclick="promptName()">
+        <h2>What is your name ?</h2>
+      </button>
+    </div>
+  </body>
+  <script>
+    const promptName = () => {
+      let button = document.getElementById("button");
+      let name = document.getElementById("name");
+      let userInput = prompt("Type your name .. ");
+      name.innerText = userInput;
+    };
+  </script>
+</html>
