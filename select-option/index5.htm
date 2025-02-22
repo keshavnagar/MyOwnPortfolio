@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="Real-time">Insert Text</label>
+            <input type="text"  oninput="RealTimeLive()" id="Real-time">
+        </div>
+    </form>
+    <h1>See the result</h1>
+    <p id="live" ></p>
+</body>
+<script>
+    RealTimeLive = () => {
+        let live = document.getElementById("live"); // select p tag 
+        let RealTime = document.getElementById("Real-time") // select input tag
+        live.innerText = RealTime.value;
+    }
+</script>
+</html>
+<!--💡 Task 3: Real-time Text Update ✍️
+Jab user ek input box me kuch bhi likhe, wahi turant (live) neeche ek <p> tag me dikhna chahiye.
+
+🔹 Steps:
+Ek input box banao jisme user text type kare.
+Ek <p> tag rakho jisme text display hoga.
+Jab user likh raha ho, turant (oninput ya onkeyup ka use karo) wahi text neeche dikhna chahiye.
+Try karo! 🔥 Agar dikkat aaye toh batao. Solution nahi dunga, sirf hints dunga. 😁🚀-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        transition: background-color 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <select name="color-select" id="color-select-id" onchange="ChangeBgColor()">
+      <option value="default">--Select--</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+      <option value="black">Black</option>
+      <option value="blue">Blue</option>
+    </select>
+
+    <script>
+      const ChangeBgColor = () => {
+        let selectBox = document.getElementById("color-select-id");
+        let selectedValue = selectBox.value;
+        if (selectedValue !== "default")
+          document.body.style.backgroundColor = selectedValue;
+        else document.body.style.backgroundColor = "white";
+      };
+    </script>
+  </body>
+</html>
